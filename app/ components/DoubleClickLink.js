@@ -3,11 +3,10 @@
 import {useCallback} from "react";
 
 export default function ({href, children, className, openInNewTab }) {
-    // const router = useRouter();
 
     const handleDoubleClick = useCallback(() => {
         if (openInNewTab) {
-            window.open(href, '_blank', 'noopener,noreferrer');
+            window.open(href, '_blank', 'noopener, noreferrer');
         } else {
             window.location.href = href;
         }

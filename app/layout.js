@@ -1,9 +1,10 @@
 import "./globals.css";
 import Link from "next/link";
 import {getServerSession} from "next-auth";
-import {LoginBtn, LogOutBtn} from "@/app/LoginBtn";
+import {LoginBtn, LogOutBtn} from "@/app/ components/LoginBtn";
 import {authOptions} from "@/pages/api/auth/[...nextauth]";
-import Time from "@/app/time";
+import Time from "@/app/ components/time";
+import WeatherComponent from "@/app/weather/Weather";
 
 export const metadata = {
   title: "Pixi",
@@ -29,8 +30,8 @@ export default async function RootLayout({ children }) {
                   }
               </div>
               <div className="timeArea">
-                  <div className="four">33</div>
-                  <Time/>
+                  <WeatherComponent/>
+                  <Time />
               </div>
           </div>
       </div>

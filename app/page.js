@@ -1,4 +1,6 @@
-import DoubleClickLink from "@/app/DoubleClickLink";
+import DoubleClickLink from "@/app/ components/DoubleClickLink";
+import MyPCModal from "@/app/ components/MyPCModal";
+import RecycleBinModal from "@/app/ components/RecycleBinModal";
 
 export default function Home() {
     return (
@@ -6,19 +8,15 @@ export default function Home() {
             <div className="double-click-grid">
                 <DoubleClickLink className="icon" href="https://www.naver.com/" openInNewTab>
                     <img src="/internetIcon.png" alt="Go to internet"/>
-                </DoubleClickLink>
-                <DoubleClickLink className="icon" href="/list">
-                    <img src="/myPC.png" alt="Go to internet"/>
-                </DoubleClickLink>
+                </DoubleClickLink> {/*internet*/}
+                <MyPCModal /> {/*MyPC*/}
                 <DoubleClickLink className="icon" href="/">
-                    <img src="/folder.png" alt="Go to internet"/>
-                </DoubleClickLink>
+                    <img src="/folder.png" alt="Go to folder"/>
+                </DoubleClickLink> {/*folder*/}
                 <DoubleClickLink className="icon" href="/">
-                    <img src="/ToDoList.png" alt="Go to internet"/>
-                </DoubleClickLink>
-                <DoubleClickLink className="icon" href="/">
-                    <img src="/RecycleBin.png" alt="Go to internet"/>
-                </DoubleClickLink>
+                    <img src="/ToDoList.png" alt="Go to ToDoList"/>
+                </DoubleClickLink> {/*ToDoList*/}
+                <RecycleBinModal/> {/*RecycleBin*/}
             </div>
         </div>
     );
