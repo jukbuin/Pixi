@@ -1,6 +1,7 @@
-import DoubleClickLink from "@/app/ components/DoubleClickLink";
-import MyPCModal from "@/app/ components/MyPCModal";
-import RecycleBinModal from "@/app/ components/RecycleBinModal";
+import DoubleClickLink from "@/app/components/DoubleClickLink";
+import MyPCModal from "@/app/components/MyPCModal";
+import RecycleBinModal from "@/app/components/RecycleBinModal";
+import FolderModal from "@/app/components/FolderModal";
 
 export default function Home() {
     return (
@@ -10,9 +11,7 @@ export default function Home() {
                     <img src="/internetIcon.png" alt="Go to internet"/>
                 </DoubleClickLink> {/*internet*/}
                 <MyPCModal /> {/*MyPC*/}
-                <DoubleClickLink className="icon" href="/">
-                    <img src="/folder.png" alt="Go to folder"/>
-                </DoubleClickLink> {/*folder*/}
+                <FolderModal/> {/*folder*/}
                 <DoubleClickLink className="icon" href="/">
                     <img src="/ToDoList.png" alt="Go to ToDoList"/>
                 </DoubleClickLink> {/*ToDoList*/}

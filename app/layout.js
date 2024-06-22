@@ -1,9 +1,9 @@
 import "./globals.css";
 import Link from "next/link";
 import {getServerSession} from "next-auth";
-import {LoginBtn, LogOutBtn} from "@/app/ components/LoginBtn";
+import {LoginBtn, LogOutBtn} from "@/app/components/LoginBtn";
 import {authOptions} from "@/pages/api/auth/[...nextauth]";
-import Time from "@/app/ components/time";
+import Time from "@/app/components/time";
 import WeatherComponent from "@/app/weather/Weather";
 
 export const metadata = {
