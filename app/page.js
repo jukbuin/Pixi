@@ -12,7 +12,7 @@ export default function Home() {
                 </DoubleClickLink> {/*internet*/}
                 <MyPCModal /> {/*MyPC*/}
                 <FolderModal/> {/*folder*/}
-                <DoubleClickLink className="icon" href="/">
+                <DoubleClickLink className="icon" href="/todo">
                     <img src="/ToDoList.png" alt="Go to ToDoList"/>
                 </DoubleClickLink> {/*ToDoList*/}
                 <RecycleBinModal/> {/*RecycleBin*/}
