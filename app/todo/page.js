@@ -2,8 +2,11 @@
 
 import {useEffect, useState} from "react";
 import Loading from "@/app/loading";
+import Write from "@/app/todo/wirte";
 
 export default function Todo() {
+    const today = new Date();
+    const formattedDate = `${today.getFullYear()}/${today.getMonth() + 1}/${today.getDate()}`;
     const [session, setSession] = useState(null);
     const [loading, setLoading] = useState(true);
 
@@ -32,12 +35,17 @@ export default function Todo() {
     if (!session) {
         return (
             <div style={{width: 1920, height: 950, display: "flex", alignItems: "center", justifyContent: "center"}}>
-                <p style={{fontSize: '30px'}}>로그인하고 오세용! 잠시 후 홈 페이지로 이동합니당.</p>
+                <p style={{fontSize: '30px'}}>로그인하고 오세용! 잠시 후 홈으로 이동합니당.</p>
             </div>
         );
     } else {
         return (
-            <div>안녕</div>
+            <div style={{width: 1920, height: 950, backgroundColor: "#433B49"}}>
+                <div className="ToDoBG">
+                    <p style={{color: "white", marginTop: 50}}>{session.user.name}'s Todos  for Today : {formattedDate}</p>
+                    <Write/>
+                </div>
+            </div>
         );
     }
 }

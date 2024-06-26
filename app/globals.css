@@ -122,3 +122,44 @@ li {
     box-shadow: 0 0 10px rgba(51, 51, 51, 0.5); /* 마우스 오버 시 투명한 막처럼 보이는 그림자 설정 */
 }
 
+/*ToDoList*/
+.ToDoBG {
+    background-image: url('/ToDoListBG.gif');
+    background-size: contain;
+    width: 800px;
+    height: 800px;
+    border-radius: 30px;
+    text-align: center;
+    position: relative;
+    top: 75px;
+    left: 550px;
+    padding: 50px;
+    /*overflow: auto;*/
+}
+
+.Add_TODO {
+    width: 490px;
+    height: 100px;
+    border-style: none;
+    border-radius: 10px;
+    text-align: center;
+    margin-right: 10px;
+}
+
+.Add_BT {
+    width: 100px;
+    height: 100px;
+    border-style: none;
+    border-radius: 10px;
+    background-color: #F2D4E6;
+    color: white;
+    cursor: pointer;
+}
+
+.Add_BT:hover {
+    background-color: #C3A0DB;
+}
+
+/*.ToDoBG::-webkit-scrollbar {*/
+/*    display: none;*/
+/*}*/
