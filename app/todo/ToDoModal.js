@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './Modal.module.css';
+import styles from './ToDoModal.module.css';
 
 const Modal = ({ show, onClose, children }) => {
     if (!show) {
