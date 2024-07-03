@@ -179,5 +179,26 @@ li {
     border-radius: 10px;
     display: flex;
     align-items: center;
+    transition: opacity 1s ease-out;
+}
 
+.list-item.hidden {
+    opacity: 0;
+}
+
+.delete {
+    width: 40px;
+    height: 40px;
+    background-color: #C3A0DB;
+    border-radius: 5px;
+    border-style: none;
+    cursor: pointer;
+}
+
+.delete:hover {
+    background-color: #8B93D4;
+}
+
+.delete > img {
+    margin: 0 auto;
 }

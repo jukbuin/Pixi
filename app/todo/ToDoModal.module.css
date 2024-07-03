@@ -15,13 +15,14 @@
 .modal {
     position: absolute;
     background: white;
-    padding-top: 20px;
+    padding: 20px;
     border-radius: 8px;
     width: 450px;
     height: 350px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
     transform: scale(0.8);
     animation: zoomIn 0.3s forwards;
+    text-align: left;
 
 }
 
@@ -36,57 +37,23 @@
     height: 44px;
 }
 
-.header {
-    background-color: #FBCBE3;
-    height: 50px;
-    width: 250px;
-    padding: 10px;
+/*수정하기*/
+.modify {
+    width: 40px;
+    height: 40px;
+    margin-right: 20px;
+    background-color: #F2CDE4;
     border-radius: 5px;
-    margin-left: 10px;
-    display: block;
-}
-
-.header2 {
-    height: 50px;
-    background-color: #FBCBE3;
-
-}
-
-.content {
-    margin-top: 20px;
-}
-
-/*MyPC 모달창*/
-.disc {
-    margin-left: 70px;
-    margin-top: 20px;
-    padding: 20px;
-}
-.disc:hover {
-    background-color: #FFF4FA;
-}
-
-/*Folder 모달창*/
-.text {
-    margin: 20px;
-    padding: 5px;
+    border-style: none;
     cursor: pointer;
 }
 
-.text:hover {
-    background-color: #FFF4FA;
+.modify:hover {
+    background-color: #8B93D4;
 }
 
-.warningImages {
-    position: relative; /* 부모 요소로부터 상대적 위치 설정 */
-    width: 100%;
-    height: 400px;
-}
-
-.warningImage {
-    position: absolute; /* 절대적 위치 설정 */
-    width: 200px;
-    height: 200px;
+.modify > img {
+    margin: 0 auto;
 }
 
 /*모달창 천천히 나오게*/

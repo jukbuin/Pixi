@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import styles from "./ToDoModal.module.css";
 import ToDoModal from "@/app/todo/ToDoModal";
 
-const ListModal = ({list}) => {
+const ModifyModal = ({list}) => {
     const [showModal, setShowModal] = useState(false);
 
     const openModal = () => {
@@ -17,15 +17,16 @@ const ListModal = ({list}) => {
 
     return (
         <>
-                <p onClick={openModal} style={{textAlign: "left", cursor: "pointer", marginLeft: 20, marginRight: 20, textOverflow: "ellipsis", whiteSpace: "nowrap", overflow: "hidden", width: 440}}>{list.title}</p>
+            <button onClick={openModal} className={styles.modify}><img src="/modify.png" alt="수정하기"/></button>
 
             <ToDoModal show={showModal} onClose={closeModal}>
-                <p>상세보기</p>
+                <p style={{}}>수정하기</p>
                 <p style={{marginTop: 50, fontSize: 18}}>내용 : {list.title}</p>
                 <p style={{marginTop: 20, fontSize: 18}}>작성일 : {list.created_at}</p>
+
             </ToDoModal>
         </>
     );
 };
 
-export default ListModal;
+export default ModifyModal;
