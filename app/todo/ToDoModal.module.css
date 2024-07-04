@@ -56,6 +56,39 @@
     margin: 0 auto;
 }
 
+.textArea {
+    margin-top: 30px;
+    margin-left: 15px;
+    padding: 10px;
+    width: 380px;
+    height: 60px;
+    border-radius: 10px;
+    border-color: #F2CDE4;
+    border-style: solid;
+}
+
+.textArea:focus {
+    border-color: #8B93D4;
+    outline: none;
+}
+
+.modifyBT {
+    position: absolute;
+    bottom: 35px;
+    right: 35px;
+    width: 100px;
+    height: 50px;
+    border-style: none;
+    border-radius: 5px;
+    background-color: #F2CDE4;
+    cursor: pointer;
+}
+
+.modifyBT:hover {
+    background-color: #8B93D4;
+    color: white;
+}
+
 /*모달창 천천히 나오게*/
 @keyframes fadeIn {
     from {
