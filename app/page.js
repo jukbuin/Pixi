@@ -16,6 +16,9 @@ export default function Home() {
                     <img src="/ToDoList.png" alt="Go to ToDoList"/>
                 </DoubleClickLink> {/*ToDoList*/}
                 <RecycleBinModal/> {/*RecycleBin*/}
+                <DoubleClickLink className="icon" href="/chat">
+                    <img src="/chat.png" alt="Go to Chat"/>
+                </DoubleClickLink>
             </div>
         </div>
     );
