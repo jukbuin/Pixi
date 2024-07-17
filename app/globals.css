@@ -168,7 +168,6 @@ li {
 
 .list_Area::-webkit-scrollbar {
     display: none;
-
 }
 
 .list-item {
@@ -202,4 +201,74 @@ li {
 
 .delete > img {
     margin: 0 auto;
+}
+
+/*ChatBot*/
+.ChatBG {
+    background-image: url('/ChatBotBG.jpg');
+    background-size: contain;
+    width: 800px;
+    height: 800px;
+    border-radius: 30px;
+    text-align: center;
+    position: relative;
+    top: 75px;
+    left: 550px;
+    padding: 70px 100px 40px 100px;
+}
+
+.Chat_textArea {
+    position: absolute;
+    bottom: 40px;
+    width: 600px;
+    height: 55px;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: #D7CEDD;
+    border-style: none;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.Chat_text {
+    width: 520px;
+    font-size: 16px;
+    border-style: none;
+    background-color: transparent;
+}
+
+.Chat_text:focus {
+    outline: none;
+}
+
+.Chat_send {
+    background-color: #856FC1;
+    border-radius: 5px;
+    border-style: none;
+    cursor: pointer;
+}
+
+.Chat_Area {
+    overflow: auto;
+    height: 635px;
+}
+
+.Chat_Area::-webkit-scrollbar {
+    display: none;
+}
+
+.Chat_userMessage, .Chat_assistantMessage {
+    background-color: #D6CEDD;
+    padding: 15px;
+    border-radius: 10px;
+    display: inline-block;
+    max-width: 60%;
+    text-align: left;
+}
+
+.Chat_assistantImage {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px; /* Space between image and message */
 }

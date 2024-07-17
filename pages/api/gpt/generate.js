@@ -18,22 +18,20 @@ export default async function handler(req, res) {
         return;
     }
 
-    const question = req.body.question || '';
+    const messages = req.body.messages || [];
+    // console.log('messages:', messages);
 
     const response = await openai.chat.completions.create({
         model: 'gpt-3.5-turbo',
         messages: [
             {
                 "role": "system",
-                "content": `I'm your friend. If you ask me ${question} that is rooted in truth, I will give you the answer to Korean. If you ask me a question that is nonsense, trickery, or has no clear answer, I will respond with \"잘 모르겠습니다.\".\n `
+                "content": `너의 친구야. 네가 진실에 기반한 질문을 하면 내가 대답을 해줄게. 하지만 말도 안 되는 질문이나 장난스러운 질문을 하면 "잘 모르겠어"라고 답할게.`
             },
-            {
-                "role": "user",
-                "content": question
-            }
+            ...messages
         ],
         temperature: 0,
-        max_tokens: 100,
+        max_tokens: 300,
     });
 
     const choice = response.choices[0];
