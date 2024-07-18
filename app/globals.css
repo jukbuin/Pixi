@@ -270,5 +270,5 @@ li {
 .Chat_assistantImage {
     width: 30px;
     height: 30px;
-    margin-right: 10px; /* Space between image and message */
+    margin-right: 20px; /* Space between image and message */
 }

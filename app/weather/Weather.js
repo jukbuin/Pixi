@@ -4,37 +4,48 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 const WeatherComponent = () => {
-    const API_KEY = process.env.NEXT_PUBLIC_API_KEY;
+    const WEATHER_API_KEY = process.env.NEXT_PUBLIC_WEATHER_API_KEY;
+    const GEOCODING_API_KEY = process.env.NEXT_PUBLIC_GEOCODING_API_KEY;
     const [weather, setWeather] = useState(null);
 
     useEffect(() => {
         navigator.geolocation.getCurrentPosition((position) => {
             const lat = position.coords.latitude;
             const lon = position.coords.longitude;
-            getWeather(lat, lon);
-            console.log("lat: " + lat);
-            console.log("lon: " + lon)
+            getCityName(lat, lon);
         });
     }, []);
 
-    const getWeather = async (lat, lon) => {
+    const getCityName = async (lat, lon) => {
         try {
             const res = await axios.get(
-                `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`
+                `https://api.opencagedata.com/geocode/v1/json?q=${lat}+${lon}&key=${GEOCODING_API_KEY}&language=en`
             );
-            console.log(res)
+            const cityName = res.data.results[0].components.city || res.data.results[0].components.town;
+            getWeather(cityName);
+            // console.log(cityName)
+        } catch (err) {
+            console.error('Error fetching city name:', err);
+        }
+    };
+
+    const getWeather = async (cityName) => {
+        try {
+            const res = await axios.get(
+                `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${WEATHER_API_KEY}&units=metric`
+            );
 
             const weatherId = res.data.weather[0].id;
-            const cityName = res.data.name;
+            const city = res.data.name;
             const temp = Math.round(res.data.main.temp);
 
             setWeather({
                 id: weatherId,
-                name: cityName,
+                name: city,
                 temp: temp,
             });
         } catch (err) {
-            console.error(err);
+            console.error('Error fetching weather data:', err);
         }
     };
 
